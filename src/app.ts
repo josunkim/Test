@@ -8,12 +8,13 @@ import commentRoutes from "./routes/comment/controller";
 import userApplicationRoutes from "./routes/user_applications/controller";
 import comparisonRoutes from "./routes/comparison/controller";
 import mainRoutes from "./routes/main/controller";
-import { setupSwagger } from "./swagger";
+const { setupSwagger } = require("./swagger");
 
 const app = express();
 
 setupSwagger(app);
 app.get("/swagger-spec", (req, res) => {
+  console.log(res);
   res.json(require("./swagger").swaggerSpec);
 });
 

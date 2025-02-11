@@ -57,6 +57,12 @@ const options: swaggerJSDoc.Options = {
 
 const swaggerSpec = swaggerJSDoc(options);
 
-export function setupSwagger(app: Express) {
+function setupSwagger(app) {
   app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+  // ✅ Swagger JSON 확인용 API 추가 (디버깅용)
+  app.get("/swagger-spec", (req, res) => {
+    res.json(swaggerSpec);
+  });
 }
+module.exports = { setupSwagger, swaggerSpec };

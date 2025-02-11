@@ -13,10 +13,11 @@ const controller_5 = __importDefault(require("./routes/comment/controller"));
 const controller_6 = __importDefault(require("./routes/user_applications/controller"));
 const controller_7 = __importDefault(require("./routes/comparison/controller"));
 const controller_8 = __importDefault(require("./routes/main/controller"));
-const swagger_1 = require("./swagger");
+const { setupSwagger } = require("./swagger");
 const app = (0, express_1.default)();
-(0, swagger_1.setupSwagger)(app);
+setupSwagger(app);
 app.get("/swagger-spec", (req, res) => {
+    console.log(res);
     res.json(require("./swagger").swaggerSpec);
 });
 //TODO: 프론트 배포 후에 cors 주소 추가하기
