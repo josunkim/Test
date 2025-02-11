@@ -55,7 +55,7 @@ const options = {
             },
         ],
     },
-    apis: isProd ? ["./dist/src/routes/**/*.js"] : ["./src/routes/**/*.ts"],
+    apis: isProd ? ["dist/src/routes/**/*.js"] : ["./src/routes/**/*.ts"],
 };
 const swaggerSpec = (0, swagger_jsdoc_1.default)(options);
 function setupSwagger(app) {
