@@ -13,6 +13,10 @@ import { setupSwagger } from "./swagger";
 const app = express();
 
 setupSwagger(app);
+app.get("/swagger-spec", (req, res) => {
+  res.json(require("./swagger").swaggerSpec);
+});
+
 //TODO: 프론트 배포 후에 cors 주소 추가하기
 // 기본 미들웨어
 app.use(cors());

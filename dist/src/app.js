@@ -16,6 +16,9 @@ const controller_8 = __importDefault(require("./routes/main/controller"));
 const swagger_1 = require("./swagger");
 const app = (0, express_1.default)();
 (0, swagger_1.setupSwagger)(app);
+app.get("/swagger-spec", (req, res) => {
+    res.json(require("./swagger").swaggerSpec);
+});
 //TODO: 프론트 배포 후에 cors 주소 추가하기
 // 기본 미들웨어
 app.use((0, cors_1.default)());
