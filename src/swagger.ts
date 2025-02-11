@@ -6,7 +6,7 @@ const isProd = process.env.NODE_ENV === "production"; // 환경 변수 확인
 const SERVER_URL = isProd
   ? process.env.PROD_SERVER_URL // 배포 환경
   : process.env.DEV_SERVER_URL; // 개발 환경
-console.log(isProd);
+
 const options: swaggerJSDoc.Options = {
   definition: {
     openapi: "3.0.0",
@@ -52,7 +52,7 @@ const options: swaggerJSDoc.Options = {
       },
     ],
   },
-  apis: ["./src/routes/**/*.ts"],
+  apis: isProd ? ["./src/routes/**/*.js"] : ["./src/routes/**/*.ts"],
 };
 
 const swaggerSpec = swaggerJSDoc(options);
