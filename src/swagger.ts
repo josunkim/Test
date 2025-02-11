@@ -52,7 +52,7 @@ const options: swaggerJSDoc.Options = {
       },
     ],
   },
-  apis: isProd ? ["./dist/routes/**/*.js"] : ["./src/routes/**/*.ts"],
+  apis: isProd ? ["../dist/src/routes/**/*.js"] : ["./src/routes/**/*.ts"],
 };
 
 const swaggerSpec = swaggerJSDoc(options);
