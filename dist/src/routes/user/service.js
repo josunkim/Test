@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const prismaClient_1 = require("../../prismaClient");
 const bcrypt_1 = __importDefault(require("bcrypt"));
-// 사용자 목록 가져오기
 /**
  * @swagger
  * /api/users:
@@ -49,7 +48,6 @@ const getuserList = async (req, res) => {
         return res.status(500).json({ error: error });
     }
 };
-// 사용자 등록
 /**
  * @swagger
  * /api/users/create:
@@ -101,7 +99,6 @@ const createUser = async (req, res) => {
         return res.status(500).json({ error: "서버 오류" });
     }
 };
-// 로그인 처리 (단순 예시, 실제로는 비밀번호 비교 및 JWT 등을 처리해야 함)
 /**
  * @swagger
  * /api/users/login:
@@ -146,7 +143,6 @@ const loginUser = async (req, res) => {
         return res.status(500).json({ error: "서버 오류" });
     }
 };
-// 사용자 프로필 조회
 /**
  * @swagger
  * /api/users/profile/{id}:
@@ -186,7 +182,6 @@ const getUser = async (req, res) => {
         return res.status(500).json({ error: "서버 오류" });
     }
 };
-// 사용자 프로필 수정
 /**
  * @swagger
  * /api/users/profile/{id}:
@@ -241,7 +236,6 @@ const updateUser = async (req, res) => {
         return res.status(500).json({ error: "서버 오류" });
     }
 };
-// 사용자 삭제
 /**
  * @swagger
  * /api/users/{id}:

@@ -52,7 +52,7 @@ const options: swaggerJSDoc.Options = {
       },
     ],
   },
-  apis: [path.join(__dirname, "../dist/src/routes/**/*.js")],
+  apis: [path.resolve(__dirname, "../dist/src/routes/**/*.js")],
 };
 
 const swaggerSpec = swaggerJSDoc(options);

@@ -3,7 +3,6 @@ import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-// 사용자 목록 가져오기
 /**
  * @swagger
  * /api/users:
@@ -47,7 +46,6 @@ const getuserList = async (req: Request, res: Response) => {
   }
 };
 
-// 사용자 등록
 /**
  * @swagger
  * /api/users/create:
@@ -100,7 +98,6 @@ const createUser = async (req: Request, res: Response) => {
   }
 };
 
-// 로그인 처리 (단순 예시, 실제로는 비밀번호 비교 및 JWT 등을 처리해야 함)
 /**
  * @swagger
  * /api/users/login:
@@ -147,7 +144,6 @@ const loginUser = async (req: Request, res: Response) => {
   }
 };
 
-// 사용자 프로필 조회
 /**
  * @swagger
  * /api/users/profile/{id}:
@@ -189,7 +185,6 @@ const getUser = async (req: Request, res: Response) => {
   }
 };
 
-// 사용자 프로필 수정
 /**
  * @swagger
  * /api/users/profile/{id}:
@@ -246,7 +241,6 @@ const updateUser = async (req: Request, res: Response) => {
   }
 };
 
-// 사용자 삭제
 /**
  * @swagger
  * /api/users/{id}:
