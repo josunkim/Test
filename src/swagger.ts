@@ -56,7 +56,7 @@ const options: swaggerJSDoc.Options = {
   apis: [
     path.join(
       __dirname,
-      isProd ? "../dist/src/routes/**/*.js" : "../src/routes/**/*.ts"
+      isProd ? "../src/routes/**/*.js" : "../src/routes/**/*.ts"
     ),
   ],
 };
