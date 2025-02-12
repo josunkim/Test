@@ -55,9 +55,7 @@ const options = {
             },
         ],
     },
-    apis: [
-        path_1.default.join(__dirname, isProd ? "../routes/**/*.js" : "../src/routes/**/*.ts"),
-    ],
+    apis: [path_1.default.join(__dirname, "../dist/src/routes/**/*.js")],
 };
 const swaggerSpec = (0, swagger_jsdoc_1.default)(options);
 function setupSwagger(app) {

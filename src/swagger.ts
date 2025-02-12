@@ -52,12 +52,7 @@ const options: swaggerJSDoc.Options = {
       },
     ],
   },
-  apis: [
-    path.join(
-      __dirname,
-      isProd ? "../routes/**/*.js" : "../src/routes/**/*.ts"
-    ),
-  ],
+  apis: [path.join(__dirname, "../dist/src/routes/**/*.js")],
 };
 
 const swaggerSpec = swaggerJSDoc(options);
