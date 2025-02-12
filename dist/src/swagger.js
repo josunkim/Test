@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const swagger_jsdoc_1 = __importDefault(require("swagger-jsdoc"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
+const path_1 = __importDefault(require("path"));
 const isProd = process.env.NODE_ENV === "production"; // 환경 변수 확인
 const SERVER_URL = isProd
     ? process.env.PROD_SERVER_URL // 배포 환경
@@ -54,7 +55,9 @@ const options = {
             },
         ],
     },
-    apis: isProd ? ["../dist/src/routes/**/*.js"] : ["./src/routes/**/*.ts"],
+    apis: [
+        path_1.default.join(__dirname, isProd ? "../routes/**/*.js" : "../src/routes/**/*.ts"),
+    ],
 };
 const swaggerSpec = (0, swagger_jsdoc_1.default)(options);
 function setupSwagger(app) {

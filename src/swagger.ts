@@ -1,6 +1,6 @@
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
-import { Express } from "express";
+import path from "path";
 
 const isProd = process.env.NODE_ENV === "production"; // 환경 변수 확인
 const SERVER_URL = isProd
@@ -52,7 +52,12 @@ const options: swaggerJSDoc.Options = {
       },
     ],
   },
-  apis: isProd ? ["../dist/src/routes/**/*.js"] : ["./src/routes/**/*.ts"],
+  apis: [
+    path.join(
+      __dirname,
+      isProd ? "../routes/**/*.js" : "../src/routes/**/*.ts"
+    ),
+  ],
 };
 
 const swaggerSpec = swaggerJSDoc(options);
